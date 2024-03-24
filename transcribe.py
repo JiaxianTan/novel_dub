@@ -3,7 +3,7 @@ import whisperx
 import torch
 from pyannote.audio import Pipeline
 
-device = "cpu"
+device = "gpu"
 compute_type = "int8"
 whisper_model = "medium"
 audio_file = "data/audio_16k.wav"
