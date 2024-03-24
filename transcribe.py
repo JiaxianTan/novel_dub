@@ -9,7 +9,7 @@ whisper_model = "medium"
 audio_file = "data/audio_16k.wav"
 
 model = WhisperModel(whisper_model, device=device, compute_type=compute_type)
-segments, info = model.transcribe(audio_file, beam_size=1, word_timestamps=False,vad_filter=True, vad_parameters=dict(min_silence_duration_ms=500))
+segments, info = model.transcribe(audio_file, beam_size=1, word_timestamps=False, vad_filter=True, vad_parameters=dict(min_silence_duration_ms=500))
 
 print(f"info.language = {info.language}")
 whisper_results = []
@@ -36,6 +36,7 @@ pipeline = Pipeline.from_pretrained(
     use_auth_token="")
 # apply pretrained pipeline
 diarization = pipeline(audio_file)
+
 
 # from pyannote.core import Annotation, Segment
 #
